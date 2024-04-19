@@ -1,0 +1,1218 @@
+{
+	"info": {
+		"_postman_id": "3ef57f59-0268-4033-a7d0-ed3865a0451a",
+		"name": "Kubernetes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Namespace",
+			"item": [
+				{
+					"name": "Create Namespace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair100.64\",\r\n    \"Name\": \"api-namespace\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"app\",\r\n            \"SecondLabel\": \"api\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"env\",\r\n            \"SecondLabel\": \"testing\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createNamespace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createNamespace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Namespace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listNamespace/umair100.64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listNamespace",
+								"umair100.64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Namespace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getNamespace/umair100.64/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getNamespace",
+								"umair100.64",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Namespace",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deleteNamespace/umair100.64/api-namespace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deleteNamespace",
+								"umair100.64",
+								"api-namespace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Namespace",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:20006/updateNamespace/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"updateNamespace",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service Account",
+			"item": [
+				{
+					"name": "Create Service Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair100.64\",\r\n    \"Name\": \"api-sa\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"sa\",\r\n            \"SecondLabel\": \"default\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createServiceAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createServiceAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Service Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listServiceAccount/umair100.64/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listServiceAccount",
+								"umair100.64",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getServiceAccount/umair100.64/default/api-sa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getServiceAccount",
+								"umair100.64",
+								"default",
+								"api-sa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete service account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deleteServiceAccount/umair100.64/default/api-sa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deleteServiceAccount",
+								"umair100.64",
+								"default",
+								"api-sa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update service account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"\",\r\n    \"Namespace\": \"\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"\",\r\n            \"SecondLabel\": \"\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"\",\r\n            \"SecondLabel\": \"\"\r\n        }\r\n    ],\r\n    \"SecretName\": \"\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:20006/updateServiceAccount/default/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"updateServiceAccount",
+								"default",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Persistent Volume",
+			"item": [
+				{
+					"name": "Create PV",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair64\",\r\n    \"Name\": \"database-node-pv\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"cluster\",\r\n            \"SecondLabel\": \"mysql\"\r\n        }\r\n    ],\r\n    \"Capacity\": \"2Gi\",\r\n    \"AccessModes\": \"ReadWriteOnce\",\r\n    \"NodeKey\": \"kubernetes.io/hostname\",\r\n    \"NodeOperator\": \"In\",\r\n    \"NodeValues\": [ \"k8s-wnode1\" ],\r\n    \"PVSource\": \"HostPath\",\r\n    \"HostPath\": {\r\n        \"Path\": \"/root/dbcluster/mysql/dbnode\",\r\n        \"Type\": \"DirectoryOrCreate\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createPV",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createPV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List PV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listPV/umair100.64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listPV",
+								"umair100.64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getPV/umair100.64/api-pv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getPV",
+								"umair100.64",
+								"api-pv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PV",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deletePV/umair100.64/api-pv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deletePV",
+								"umair100.64",
+								"api-pv"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Persistent Volume Claim",
+			"item": [
+				{
+					"name": "Create PVC",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair64\",\r\n    \"Name\": \"database-node-pvc\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"cluster\",\r\n            \"SecondLabel\": \"mysql\"\r\n        }\r\n    ],\r\n    \"AccessModes\": \"ReadWriteOnce\",\r\n    \"VolumeName\": \"database-node-pv\",\r\n    \"Capacity\": \"2Gi\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createPVC/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createPVC",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List PVC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listPVC/umair100.64/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listPVC",
+								"umair100.64",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PVC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getPVC/araMam35/default/management-node-pvc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getPVC",
+								"araMam35",
+								"default",
+								"management-node-pvc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PVC",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deletePVC/umair100.64/default/go-pvc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deletePVC",
+								"umair100.64",
+								"default",
+								"go-pvc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Create Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair64\",\r\n    \"Name\": \"mgmt-service\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"cluster\",\r\n            \"SecondLabel\": \"mysql\"\r\n        }\r\n    ],\r\n    \"Type\": \"ClusterIP\",\r\n    \"ClusterIP\": {\r\n        \"PortName\": \"mgmd\",\r\n        \"Port\": 1186,\r\n        \"Protocol\": \"TCP\",\r\n        \"TargetPort\": 1186\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createService/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createService",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:20006/listServices/{namespace}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"listServices",
+								"{namespace}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:20006/getService/{namespace}/{name}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"getService",
+								"{namespace}",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:20006/deleteService/{namespace}/{name}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"deleteService",
+								"{namespace}",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"\",\r\n    \"Namespace\": \"\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"\",\r\n            \"SecondLabel\": \"\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"\",\r\n            \"SecondLabel\": \"\"\r\n        }\r\n    ],\r\n    \"Type\": \"NodePort\",\r\n    \"Ports\": [\r\n        {\r\n            \"PortName\": \"\",\r\n            \"Port\": \"\",\r\n            \"Protocol\": \"TCP\",\r\n            \"TargetPort\": \"\",\r\n            \"NodePort\": \"\"\r\n        }\r\n    ] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:20006/updateService/{namespace}/{name}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"updateService",
+								"{namespace}",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pods",
+			"item": [
+				{
+					"name": "Create Pod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair64\",\r\n    \"Name\": \"sap-pod\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        }\r\n    ],\r\n    \"NodeName\": \"k8s-wnode1\",\r\n    // \"VolumeSource\": \"pvcconfig\",\r\n    // \"Storage\": {\r\n    //     \"PVC\": {\r\n    //         \"MountName\": \"hanadb\",\r\n    //         \"ClaimName\": \"sap-pvc\"\r\n    //     },\r\n    //     \"ConfigmapSourceOne\": {\r\n    //         \"MountName\": \"pass\",\r\n    //         \"ConfigmapName\": \"hana-password\"\r\n    //     }\r\n    // },\r\n    \"Container\": {\r\n        \"ContainerName\": \"db-cnt\",\r\n        \"Image\": \"saplabs/hanaexpress:2.00.061.00.20220519.1\",\r\n        \"ContainerPort\": [\r\n            {\r\n                \"Name\": \"port1\",\r\n                \"Port\": 39013\r\n            },\r\n            {\r\n                \"Name\": \"port2\",\r\n                \"Port\": 39017\r\n            },\r\n            {\r\n                \"Name\": \"port3\",\r\n                \"Port\": 39041\r\n            },\r\n            {\r\n                \"Name\": \"port4\",\r\n                \"Port\": 4390\r\n            },\r\n            {\r\n                \"Name\": \"port5\",\r\n                \"Port\": 8090\r\n            },\r\n            {\r\n                \"Name\": \"port6\",\r\n                \"Port\": 59013\r\n            },\r\n            {\r\n                \"Name\": \"port7\",\r\n                \"Port\": 59014\r\n            }\r\n        ],\r\n        \"SecurityContext\": {\r\n            \"RunAsUser\": 12000\r\n        },\r\n        \"Args\": [\r\n            \"--agree-to-sap-license\",\r\n            \"--dont-check-system\",\r\n            \"--passwords-url\",\r\n            \"file:///hana/hxeconfig/password.json\"\r\n        ],\r\n        \"ReadinessProbe\": {\r\n            \"Command\": [\"touch\", \"file1\"],\r\n            \"InitialDelaySeconds\": 10,\r\n            \"TimeoutSeconds\": 20,\r\n            \"PeriodSeconds\": 10\r\n        },\r\n        \"CpuLimits\": 3200,\r\n        \"MemoryLimits\": \"6Gi\",\r\n        \"CpuRequest\": 3000,\r\n        \"MemoryRequest\": \"6Gi\",\r\n        \"Tty\": true\r\n        // \"VolumeMount\": [\r\n        //     {\r\n        //         \"MountName\": \"hanadb\",\r\n        //         \"MountPath\": \"/hana/mounts\"\r\n        //     },\r\n        //     {\r\n        //         \"MountName\": \"pass\",\r\n        //         \"MountPath\": \"/hana/hxeconfig\"\r\n        //     }\r\n        // ]\r\n    }\r\n    // \"InitContainer\": {\r\n    //     \"ContainerName\": \"volume-permissions\",\r\n    //     \"Image\": \"busybox\",\r\n    //     \"Command\": [\r\n    //         \"sh\",\r\n    //         \"-c\",\r\n    //         \"chown 12000:79 /hana/mounts\",\r\n    //         \"chmod g+s /hana/mounts\",\r\n    //         \"ls -lh -d /hana/mounts\"\r\n    //     ],\r\n    //     \"VolumeMounts\": [\r\n    //         {\r\n    //             \"MountName\": \"hanadb\",\r\n    //             \"MountPath\": \"/hana/mounts\"\r\n    //         }\r\n    //     ]\r\n    // }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createPod/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createPod",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pod Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getPod/umair100.64/default/mariadb-0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getPod",
+								"umair100.64",
+								"default",
+								"mariadb-0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Pods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:20006/listPod/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"listPod",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pod",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deletePod/umair100.64/default/api-pod",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deletePod",
+								"umair100.64",
+								"default",
+								"api-pod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pod",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\":\"api-pod\",\r\n    \"Namespace\":\"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"app\",\r\n            \"SecondLabel\": \"api\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"env\",\r\n            \"SecondLabel\": \"testing\"\r\n        }\r\n    ],\r\n    \"Containers\": {\r\n        \"ContainerName\": \"db-cnt\",\r\n        \"Image\": \"mysql\",\r\n        \"Ports\": [\r\n            {\r\n                \"Name\": \"http\",\r\n                \"Port\": 3306\r\n            }\r\n        ],\r\n        \"EnvVar\" : [\r\n            {\r\n                \"Name\": \"MYSQL_ROOT_PASSWORD\",\r\n                \"Value\": \"root\"\r\n            },\r\n            {\r\n                \"Name\": \"MYSQL_USER\",\r\n                \"Value\": \"dbuser\"\r\n            },\r\n            {\r\n                \"Name\": \"MYSQL_PASSWORD\",\r\n                \"Value\": \"dbpassword\"\r\n            },\r\n            {\r\n                \"Name\": \"MYSQL_DATABASE\",\r\n                \"Value\": \"db1\"\r\n            }\r\n        ],\r\n        \"Commands\": [\"/bin/bash\"],\r\n        \"Args\": [\"-ecx\", \"check\"],\r\n        \"VolumeMounts\": [\r\n            {\r\n                \"MountName\": \"first-mount\",\r\n                \"MountPath\": \"/var/lib/mysql\",\r\n                \"SubPath\": \"mysql\"          \r\n            }\r\n        ],\r\n        \"CpuLimits\": \"750m\",\r\n        \"MemoryLimits\": \"750Mi\",\r\n        \"CpuRequest\": \"450m\",\r\n        \"MemoryRequest\": \"500Mi\",\r\n        \"Tty\": true\r\n    },\r\n    \"Cmd\": true, \r\n    \"Volume\": \"pvc\",\r\n    \"Storage\": {\r\n        \"PVC\": {\r\n            \"ClaimName\": \"db1-pvc\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:20006/updatePod/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20006",
+							"path": [
+								"updatePod",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configmaps",
+			"item": [
+				{
+					"name": "list configmaps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listConfigmap/umair100.64/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listConfigmap",
+								"umair100.64",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Configmap by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getConfigmapDetails/umair100.64/default/api-cfg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getConfigmapDetails",
+								"umair100.64",
+								"default",
+								"api-cfg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Configmap",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair64\",\r\n    \"Name\": \"startup\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"cluster\",\r\n            \"SecondLabel\": \"mysql\"\r\n        }\r\n    ],\r\n    \"Data\": {\r\n        \"sleep.sh\": \"#!/bin/bash\\nsleep 60\\nndbd -c mgmt-node-0.mgmt-service.default.svc.cluster.local --initial --nodaemon -v\"\r\n    }  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createConfigmap/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createConfigmap",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Configmaps",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deleteConfigmap/araMam35/default/startup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deleteConfigmap",
+								"araMam35",
+								"default",
+								"startup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Connection to cluster",
+			"item": [
+				{
+					"name": "Check Credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Server\": \"https://10.100.100.64:6443\",\r\n    \"CertificateAuthorityData\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EWXhOakExTkRjek5Gb1hEVE16TURZeE16QTFORGN6TkZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTmpUCm5uNTkrd0FLcFBmYW9lMDljUmthT2tVbTNQWFI0aU9rOG15cGJvMTkxT1FvVkp1MnRHS3dhQzU4VENRTm9KODYKcVZzS2ozMVQ3UTNORXJqTXFrem5iV2Z0emRtS3U4bG9iOUZ2UG5tb0F5eGd3WWd3RGRFVm5ZUVdkZWF5TjV4cwpiaXoydWp3Z0xhaTBwNWd2TlFycTBnTFdjT2IvV0RkQUlZazlBWUV4SmxyY3BEZ0VFMitzRVNtKzVLd0ZyaXhDClNBMmtveWNIOThDTVVOZW1ub3daTUN4ejhNYVJHcDhydDRQMVkvYUJOdlZTRWtDaXdnM1JGUVpsSk5BWXlhVEEKODB1U0N2TDY2YjVpb0dLNnRZdXkzWTNoM2p3RkVhUDdOTHBwemgxWk4rSEl2ZXdvS1JuYlhPdDBMMnh5L05YVQpDV040V1ZOc3U3M25LcDVVNXVVQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZId2c5Vitqc1FzOUdZNEV0Q3BxRTV0Zy9LVGRNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRGdsS3JVQlRHbVVVVk0zODhhZgpzdDN3OXZ2U0xJdC9ndzFqZ1JCVlR5ZmM4cVdMS3c0V2pweXpTWWFHMlBCRTQ5cEFMaUdEa1hBSHk2V0pmblBhCnJLaWg2YkdyQnJuRGJPZituUE5SSTBoUlpjM2lJN3pXNXdBamF1UktESU5pZjVuSHBieDZZMTBSVVUvMTd5cngKbC80b2hYMm9pK2RkNStwd1BzKzNKcXg1R1Z3WlVVWTE1VGxOZW1SemNndnkzQ1hVUXhkcUNlelY5Z2liVlNuYwp1ME9QL2E3cHFRNUd4QXVUN3RraTh4aUtibEhtaUIwZWlmU2VQZVgxY0FCWjNsTThLdGVYT0gyc21jZUZGYnM1Cmw1aTVRWUJ3Mk52RjE0NTFpNnlBakVqWTRacEFHTFAxbGdDUnhZQTlvSlc4UG1TUDN0akZ0M25RSkd1WWhFazYKQ3I0PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\",\r\n    \"ClientCertificateData\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURJVENDQWdtZ0F3SUJBZ0lJVklsSnk5YldGeVV3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TXpBMk1UWXdOVFEzTXpSYUZ3MHlOREEyTVRVd05UUTNOREZhTURReApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1Sa3dGd1lEVlFRREV4QnJkV0psY201bGRHVnpMV0ZrCmJXbHVNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXVsVXBsa2tvWjQrZTUzNCsKclgrdjJsTjNnYUtNTlZ3N0FwbHFYWTByd1FiVkpvempyZVdaRHlhVVgxV2NMRlYwMkltcWwvM3RPZFpJSGFhTApKOUNsem42Uk1hOFdIci9HMG5vM0YwRktQcFVGRWhWUXZrenJ3aUx3dGFUZXFSMWREK1RFMmM2MnZpUnZ0L1UvCldYcktacnRwWktRSnI5M0VVa0paZGlzVnFoZFIxS3lwU2tWSFdicjFPMU9lSDdpeWVmdEJXOWJvTEVXMWVndmEKZ2NVc2VrODA3TjY2SFJFMTlVV1NCUDlFSkRoa3FyQVRPbGdQZXFkVU5UQXVxSFlKNDgwOHFrWW5vdHAyVjNLcwovNnZoczNiUWt5Nm1wb1k2bHhwbVNyNDU1djFaUGJUTXFXWlBQbWhSdDBSUVNhaHYzTDlnQjNyV0tJN0NTeHJjCnhmandnUUlEQVFBQm8xWXdWREFPQmdOVkhROEJBZjhFQkFNQ0JhQXdFd1lEVlIwbEJBd3dDZ1lJS3dZQkJRVUgKQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JSOElQVmZvN0VMUFJtT0JMUXFhaE9iWVB5awozVEFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBZSs1N0JKWVRKU2drVlJGNHllWGMreGlJMVMwUWs3cTI5K0cxCmlHRGR3QWZxV1AzaHJzSFlxSStjWFhpWHVrend5cHh5elhzWmNDUmIvb0NHb3N4Q0RFT3NXUHY1Y0xqNm1xNFQKNUpvbzQzZWU0amdrQVFuQ1lFYVZPZTM2QnpaR3gvMXJrWVBCSnhid2tqemZHZThqcDZoaFJHc3k2YkRQNktyRAovVzFYNzVXTEdFYXo0a1NZWVVrTTBOWWFiQ1I1ZUVtcUh4MFJGMG1lbHpUQXRFZjJXaVMraDkwZkpIU1Qvd0psClA1ekpPakNWeTRPeEZaSSt3azQyK3RScjFoYTdNdk1ZeG44M1R0OTlBc210TlI2MldJLzcxTHY4MVVqWExuYTUKa0N1TWptMldPUXhaNVh4NkdSZVVwOWg3YUQyc2UxejI4NjZhcHFyTVJTS1gvb1FuTXc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\",\r\n    \"Cluster\": \"kubernetes\",\r\n    \"ClientKeyData\": \"LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdWxVcGxra29aNCtlNTM0K3JYK3YybE4zZ2FLTU5WdzdBcGxxWFkwcndRYlZKb3pqCnJlV1pEeWFVWDFXY0xGVjAySW1xbC8zdE9kWklIYWFMSjlDbHpuNlJNYThXSHIvRzBubzNGMEZLUHBVRkVoVlEKdmt6cndpTHd0YVRlcVIxZEQrVEUyYzYydmlSdnQvVS9XWHJLWnJ0cFpLUUpyOTNFVWtKWmRpc1ZxaGRSMUt5cApTa1ZIV2JyMU8xT2VIN2l5ZWZ0Qlc5Ym9MRVcxZWd2YWdjVXNlazgwN042NkhSRTE5VVdTQlA5RUpEaGtxckFUCk9sZ1BlcWRVTlRBdXFIWUo0ODA4cWtZbm90cDJWM0tzLzZ2aHMzYlFreTZtcG9ZNmx4cG1TcjQ1NXYxWlBiVE0KcVdaUFBtaFJ0MFJRU2FodjNMOWdCM3JXS0k3Q1N4cmN4Zmp3Z1FJREFRQUJBb0lCQUF5eWxQenF5MWdUVDI3VApDWTVsTHlTZm4zczBDbjN3WlEwT1MxTkl0WHlYN0pxTjYwNEVZV1BJNno5NzVBS1phRGNCV3FDMDZ4K1AzS1k0Cm5TNy9adTBsYnR1RjVPbi9nNXNBUFJUV25DcWJtUmJjWVA0MjI3SUZFNFl0VUFjU095OUVGYTRLQ2lYMjhhNEYKaG1XZ21uNVpzeHJxbXNaalJHZWVvZDROblpKVG1veVdLbTllV0lYdnFyd2JSZm9DQTdjY2t1bGVweEI0SUFBOQpQa05pMlhkSWlwNTQwbnBYSGt3Q1RVT3hHQ3lGbDIxTlRYV0pEdDdYazMyTVVBM1BETjFqOUFNMlFPOStGcUduCm82Vk50S25DWDdQRHplK2JoNHBVeVVUSHM0SEdFNCtJUEZpYXgwMDN3Si9LWTBOMDVtRmhydlRacWhLZlJlU0IKUnBBdlNHa0NnWUVBODN0T2o2bjYwVkdFT2o3SjByUi9Pc3FDbm9rbzgydVVyQ2pRM2FtRlIvTFk5UU9EaEpwNgo4M2doYjllTUdSQ2JyeEtQb3V5d3VKbWpGTlNuYjdEWG1GdmYrdXY3UkV2SFpLY2M1Qkx5eGtzWGlIZkhGSU55CjU0dDBUYUZ1ZXFkMDFjV283ZjFLMHhnNTZjci9mRFl1RWJIUmdZYUVBOVMwUUN4QkJUZ1oxck1DZ1lFQXcrbXAKMGpySlEzVTZ0Rm1nOHFzVTZYWmNxVnhrVkdxR2wxY2Uzd0JQcWlyeG5MY1BRcUNsbGVLUkZrRkRRVG1TbjZWaQpNMkVkRGpOT0xJTFM4WVN1cnk4bFBMOHh4Y2JMTGlLZW43YWw5cU05WUw5ZnJYUzdqbE1OcEkxSVpMV2o4NXo1Ck1KZzFvUkNSV2s1MTgwU21vVGZoV29TWTRCR0RIcnltRTRzK1Zmc0NnWUVBeVZSSnR0T1lHV010VWpnL0RHTEIKM2F3OGE3a0F5cDlIZFQvZXpadHlJUGMyM1FxRndxMDJRNEl2SzlydzluemNMdHpMTnE0K3hyWUx1cHJJeEx0VwoycDRGeStjN2d0S2lVcUU0YTRNYmlrbm5jS21TVFcwUUkxUVYzR2REQWxyYmFqU2lKZ0JPMGRSemR0V3JnbHNPCnB3VUJOdmd5eXpRancvaVQzeXZ2ZWE4Q2dZRUFnTkJiWTZwWmVTeFVYQTd1bjRCVHNLbXRoWUlGU2VmODlQZEkKaWhIM1Q0a0s4aUwvT3F6TUUwQTBhM0NmMnZ3UzV6dGoxU3FPWXk3aXdLdUlMVnN6VEdad1VuL1lKeFZ0dExqNAptVVVMM0o0NmxpbGVySHNyY3dveTF6WTZHbFhBSmtiWkpkVit0WmRpS3dHWjFra1dVcnllUk5rWWQ0T3NOZ0tPCkpCMlM4QThDZ1lCczJqS3gxUWlQaktyQjJVNTlvd2YxM3NZSHp2N0xOUUh1NHp5U1RCRFo0WEhLVjRPS1BYTmYKTS9tNXFITGkxZ1dIZEI2Yk5jRjBqVUdEZGljTTZRMHdMTkUzaDZEdzVHRStiQnR0RnZuUy9mbHd3amF5dkw2KwoyUERabFUxTGRzWnhzNmxUbHl5cnNROE1sOFFCTC9zM01sMGRPcDBDTzA4M0xHNlZLNkRHYUE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=\",\r\n    \"ClusterId\": \"umair64\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/checkCredentials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"checkCredentials"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deployment",
+			"item": [
+				{
+					"name": "List All deployment details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listDeployments/umair100.64/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listDeployments",
+								"umair100.64",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deployment details by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getDeployment/umair100.64/default/dep1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getDeployment",
+								"umair100.64",
+								"default",
+								"dep1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete deployment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deleteDeployment/umair100.64/default/dep1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deleteDeployment",
+								"umair100.64",
+								"default",
+								"dep1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Deployment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair100.64\",\r\n    \"Name\": \"dep1\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"app\",\r\n            \"SecondLabel\": \"golang\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"env\",\r\n            \"SecondLabel\": \"testing\"\r\n        }\r\n    ],\r\n    \"Replicas\": 1,\r\n    \"Container\": {\r\n        \"ContainerName\": \"db-cnt\",\r\n        \"Image\": \"mysql\",\r\n        \"ContainerPort\": [\r\n            {\r\n                \"Name\": \"http\",\r\n                \"Port\": 3306\r\n            }\r\n        ],\r\n        \"EnvVariable\" : [\r\n            {\r\n                \"Name\": \"MYSQL_ROOT_PASSWORD\",\r\n                \"Value\": \"root\"\r\n            },\r\n            {\r\n                \"Name\": \"MYSQL_USER\",\r\n                \"Value\": \"dbuser\"\r\n            },\r\n            {\r\n                \"Name\": \"MYSQL_PASSWORD\",\r\n                \"Value\": \"dbpassword\"\r\n            },\r\n            {\r\n                \"Name\": \"MYSQL_DATABASE\",\r\n                \"Value\": \"db1\"\r\n            }\r\n        ],\r\n        \"VolumeMount\": [\r\n            {\r\n                \"MountName\": \"first\",\r\n                \"MountPath\": \"/var/lib/mysql\"\r\n            }\r\n        ],\r\n        \"CpuLimits\": 750,\r\n        \"MemoryLimits\": \"1Gi\",\r\n        \"CpuRequest\": 750,\r\n        \"MemoryRequest\": \"1Gi\",\r\n        \"Tty\": true\r\n    },\r\n    \"VolumeSource\": \"pvc\",\r\n    \"Storage\": {\r\n        \"PVC\": {\r\n            \"MountName\": \"first\",\r\n            \"ClaimName\": \"go-pvc\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createDeployment/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createDeployment",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatefulSet",
+			"item": [
+				{
+					"name": "Create Statefulset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair64\",\r\n    \"Name\": \"node-database2\",\r\n    \"Namespace\": \"default\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"api\",\r\n            \"SecondLabel\": \"go\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"cluster\",\r\n            \"SecondLabel\": \"mysql\"\r\n        }\r\n    ],\r\n    \"Replicas\": 1,\r\n    \"ServiceName\": \"mgmt-service\",\r\n    \"NodeName\": \"k8s-wnode1\",\r\n    \"Container\": {\r\n        \"ContainerName\": \"dbnode1-cnt\",\r\n        \"Image\": \"mysql/mysql-cluster\",\r\n        \"ContainerPort\": [\r\n            {\r\n                \"Name\": \"mgmd\",\r\n                \"Port\": 1186\r\n            }\r\n        ],\r\n        \"Command\": [ \"/bin/bash\" ],\r\n        \"Args\": [ \"-ecx\", \"/usr/sbin/ndbd -c mgmt-node-0.mgmt-service.default.svc.cluster.local --initial --nodaemon -v\" ],\r\n        \"EnvVariable\" : [\r\n            {\r\n                \"Name\": \"MYSQL_ROOT_PASSWORD\",\r\n                \"Value\": \"root123\"\r\n            }\r\n        ],\r\n        \"VolumeMount\": [\r\n            {\r\n                \"MountName\": \"datavolume\",\r\n                \"MountPath\": \"/var/lib/mysql\"\r\n            },\r\n            {\r\n                \"MountName\": \"script\",\r\n                \"MountPath\": \"/etc/mysql-cluster.cnf\",\r\n                \"SubPath\": \"mysql-cluster.cnf\"\r\n            },\r\n            {\r\n                \"MountName\": \"config\",\r\n                \"MountPath\": \"/etc/my.cnf\",\r\n                \"SubPath\": \"my.cnf\"\r\n            }\r\n        ],\r\n        \"CpuLimits\": 1200,\r\n        \"MemoryLimits\": \"1Gi\",\r\n        \"CpuRequest\": 1200,\r\n        \"MemoryRequest\": \"1Gi\",\r\n        \"Tty\": true\r\n    },\r\n    \"VolumeSource\": \"mysql\",\r\n    \"Storage\": {\r\n        \"PVC\": {\r\n            \"MountName\": \"datavolume\",\r\n            \"ClaimName\": \"database-node-pvc\"\r\n        },\r\n        \"ConfigmapSourceOne\": {\r\n            \"MountName\": \"script\",\r\n            \"ConfigmapName\": \"mysql-cluster-configmap\",\r\n            \"Key\": \"mysql-cluster.cnf\",\r\n            \"Path\": \"mysql-cluster.cnf\"\r\n        },\r\n        \"ConfigmapSourceTwo\": {\r\n            \"MountName\": \"config\",\r\n            \"ConfigmapName\": \"mysql-config\",\r\n            \"Key\": \"my.cnf\",\r\n            \"Path\": \"my.cnf\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createStatefulset/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createStatefulset",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List details for all statefulsets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listStatefulset/umair100.64/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listStatefulset",
+								"umair100.64",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Details for a statefulset using name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getStatefulset/umair100.64/default/first-sts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getStatefulset",
+								"umair100.64",
+								"default",
+								"first-sts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete statefulset",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deleteStatefulset/araMam35/default/management-node",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deleteStatefulset",
+								"araMam35",
+								"default",
+								"management-node"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cluster Roles",
+			"item": [
+				{
+					"name": "List Cluster roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/listClusterRoles/umair100.64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"listClusterRoles",
+								"umair100.64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cluster Role Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/getClusterRole/umair100.64/role-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"getClusterRole",
+								"umair100.64",
+								"role-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete CLuster role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/deleteClusterRole/umair100.64/role-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"deleteClusterRole",
+								"umair100.64",
+								"role-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Cluster role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ClusterId\": \"umair100.64\",\r\n    \"Name\": \"test\",\r\n    \"Labels\": [\r\n        {\r\n            \"FirstLabel\": \"app\",\r\n            \"SecondLabel\": \"golang\"\r\n        },\r\n        {\r\n            \"FirstLabel\": \"env\",\r\n            \"SecondLabel\": \"testing\"\r\n        }\r\n    ],\r\n    \"RoleRules\": [\r\n        {\r\n            \"ApiGroup\": [\"\", \"\",\"\"],\r\n            \"Resources\": [ \"\", \"\"],\r\n            \"Verbs\": [ \"\", \"\"]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:26443/api/kubernetes/createClusterRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "26443",
+							"path": [
+								"api",
+								"kubernetes",
+								"createClusterRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
